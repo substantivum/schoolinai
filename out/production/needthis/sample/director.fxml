@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="451.0" prefWidth="853.0" style="-fx-background-color: #0D0630;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DirectorController">
+   <children>
+      <AnchorPane fx:id="for_director" layoutX="10.0" layoutY="88.0" prefHeight="372.0" prefWidth="700.0">
+         <children>
+            <AnchorPane fx:id="buttons_dir" layoutX="-14.0" prefHeight="372.0" prefWidth="201.0" style="-fx-background-color: #0D0630;">
+               <children>
+                  <Button layoutX="31.0" layoutY="258.0" mnemonicParsing="false" onAction="#showDirectorManual" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Information" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="30.0" layoutY="118.0" mnemonicParsing="false" onAction="#Open_teachers_table" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Teachers" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="subjects_dirbutton" layoutX="32.0" layoutY="50.0" mnemonicParsing="false" onAction="#showSubjects" opacity="0.88" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Subjects" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="30.0" layoutY="192.0" mnemonicParsing="false" onAction="#showStudents" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Students" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit" layoutX="32.0" layoutY="318.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Exit" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="button_sub" layoutX="187.0" prefHeight="372.0" prefWidth="667.0">
+               <children>
+                  <ButtonBar fx:id="choose_sub1" layoutX="30.0" layoutY="184.0" prefHeight="112.0" prefWidth="614.0">
+                     <buttons>
+                        <Button fx:id="sub_eng" mnemonicParsing="false" onAction="#EnglishTable" prefHeight="24.0" prefWidth="210.0" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="English" />
+                        <Button fx:id="sub_germ" mnemonicParsing="false" onAction="#GermanTable" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="German" />
+                        <Button fx:id="sub_ipo" mnemonicParsing="false" onAction="#SETable" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="Software Engineering" />
+                     </buttons>
+                  </ButtonBar>
+                  <ButtonBar fx:id="choose_sub2" layoutX="25.0" layoutY="67.0" prefHeight="112.0" prefWidth="622.0">
+                     <buttons>
+                        <Button fx:id="sub_math" mnemonicParsing="false" onAction="#MathTable" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="Math" />
+                        <Button fx:id="sub_logic" mnemonicParsing="false" onAction="#LogicTable" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="Mathimetic Logic" />
+                        <Button fx:id="sub_pl" mnemonicParsing="false" onAction="#PLTable" style="-fx-background-color: #FFBC42; -fx-border-color: #0D0630;" text="Programming Language" />
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="students_anch" layoutX="184.0" prefHeight="372.0" prefWidth="667.0" style="-fx-background-color: #0D0630;">
+               <children>
+                  <TableView fx:id="table_students" onMouseClicked="#getSelected_student" prefHeight="286.0" prefWidth="667.0" stylesheets="@../css/table.css">
+                     <columns>
+                        <TableColumn fx:id="st_num" prefWidth="41.5999755859375" text="№" />
+                        <TableColumn fx:id="st_id" prefWidth="71.20001220703125" text="ID" />
+                        <TableColumn fx:id="st_name" prefWidth="94.39996337890625" text="Name" />
+                        <TableColumn fx:id="st_lname" prefWidth="105.5999755859375" text="Last Name" />
+                        <TableColumn fx:id="st_usname" prefWidth="107.199951171875" text="login" />
+                        <TableColumn fx:id="st_pass" prefWidth="81.5999755859375" text="password" />
+                        <TableColumn fx:id="st_group" minWidth="0.0" prefWidth="95.2000732421875" text="group" />
+                        <TableColumn fx:id="st_dob" prefWidth="71.9998779296875" text="Birth" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="28.0" layoutY="308.0" mnemonicParsing="false" onAction="#showAddStudent" prefHeight="42.0" prefWidth="149.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Add student" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="238.0" layoutY="309.0" mnemonicParsing="false" onAction="#showUpdateStudent" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Update student" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="454.0" layoutY="309.0" mnemonicParsing="false" onAction="#Delete_student_table" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Delete student" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="teachers_anch" layoutX="187.0" prefHeight="372.0" prefWidth="667.0" style="-fx-background-color: #0D0630;">
+               <children>
+                  <Button layoutX="28.0" layoutY="308.0" mnemonicParsing="false" onAction="#showAddTeacher" prefHeight="42.0" prefWidth="149.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Add teacher" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="238.0" layoutY="309.0" mnemonicParsing="false" onAction="#showEditTeacher" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Update teacher" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="454.0" layoutY="309.0" mnemonicParsing="false" onAction="#Delete_teacher_table" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Delete teacher" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="table_teachers" onMouseClicked="#getSelected_teacher" prefHeight="286.0" prefWidth="667.0" stylesheets="@../css/table.css">
+                     <columns>
+                        <TableColumn fx:id="teach_num" prefWidth="36.00006103515625" text="№" />
+                        <TableColumn fx:id="teach_id" prefWidth="65.60003662109375" text="ID" />
+                        <TableColumn fx:id="teach_name" prefWidth="73.60003662109375" text="Name" />
+                        <TableColumn fx:id="teach_lname" prefWidth="74.39996337890625" text="Last Name" />
+                        <TableColumn fx:id="teach_usname" prefWidth="85.5999755859375" text="login" />
+                        <TableColumn fx:id="teach_pass" prefWidth="92.79998779296875" text="password" />
+                        <TableColumn fx:id="teach_subject" minWidth="0.0" prefWidth="87.99993896484375" text="Subject" />
+                        <TableColumn fx:id="teach_dob" prefWidth="72.0" text="Birth" />
+                        <TableColumn fx:id="teach_phone" prefWidth="81.60009765625" text="Phone" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane fx:id="teach_edit" layoutX="161.0" prefHeight="358.0" prefWidth="346.0" style="-fx-background-color: #666A86;">
+                     <children>
+                        <TextField fx:id="editteach_fname" layoutX="84.0" layoutY="9.0" prefHeight="31.0" prefWidth="187.0" promptText="first name" />
+                        <TextField fx:id="editteach_lname" layoutX="85.0" layoutY="47.0" prefHeight="27.0" prefWidth="187.0" promptText="last name" />
+                        <TextField fx:id="editteach_num" layoutX="85.0" layoutY="83.0" prefHeight="31.0" prefWidth="187.0" promptText="number in list" />
+                        <TextField fx:id="editteach_dob" layoutX="86.0" layoutY="122.0" prefHeight="31.0" prefWidth="187.0" promptText="date of birth" />
+                        <TextField fx:id="editteach_login" layoutX="84.0" layoutY="161.0" prefHeight="31.0" prefWidth="187.0" promptText="login" />
+                        <TextField fx:id="editteach_pass" layoutX="85.0" layoutY="196.0" prefHeight="31.0" prefWidth="187.0" promptText="password" />
+                        <TextField fx:id="editteach_subject" layoutX="83.0" layoutY="232.0" prefHeight="31.0" prefWidth="187.0" promptText="subject id" />
+                        <TextField fx:id="editteach_phone" layoutX="85.0" layoutY="269.0" prefHeight="31.0" prefWidth="187.0" promptText="phone" />
+                        <Button layoutX="68.0" layoutY="318.0" mnemonicParsing="false" onAction="#Edit_teacher" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Update" textFill="#f7f0f5" />
+                        <Button layoutX="190.0" layoutY="318.0" mnemonicParsing="false" onAction="#closeEditTeacher" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #0D0630;" text="Close" textFill="#f7f0f5" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="studsub_anch" layoutX="187.0" prefHeight="372.0" prefWidth="667.0">
+               <children>
+                  <TableView fx:id="table_studsub" prefHeight="310.0" prefWidth="667.0" stylesheets="@../css/table.css">
+                     <columns>
+                        <TableColumn fx:id="stsub_num" prefWidth="42.4000244140625" text="№" />
+                        <TableColumn fx:id="stsub_id" prefWidth="68.0" text="ID" />
+                        <TableColumn fx:id="stsub_name" prefWidth="95.199951171875" text="Name" />
+                        <TableColumn fx:id="stsub_lname" prefWidth="100.79998779296875" text="Last Name" />
+                        <TableColumn fx:id="stsub_usname" prefWidth="84.79998779296875" text="login" />
+                        <TableColumn fx:id="stsub_pass" prefWidth="81.5999755859375" text="password" />
+                        <TableColumn fx:id="stsub_group" prefWidth="72.79998779296875" text="group" />
+                        <TableColumn fx:id="stsub_dob" prefWidth="161.5999755859375" text="Date of birth" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="407.0" layoutY="327.0" mnemonicParsing="false" onAction="#addStudenttoSub" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Add student" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="subadd_id" layoutX="27.0" layoutY="332.0" prefHeight="26.0" prefWidth="119.0" promptText="student's id" />
+                  <TextField fx:id="subadd_sub" layoutX="174.0" layoutY="331.0" prefHeight="27.0" prefWidth="119.0" />
+                  <Button layoutX="541.0" layoutY="326.0" mnemonicParsing="false" onAction="#showSubjects" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="Back" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="manual" layoutX="198.0" layoutY="94.0" prefHeight="372.0" prefWidth="674.0">
+         <children>
+            <Label layoutX="102.0" layoutY="63.0" prefHeight="223.0" prefWidth="470.0" text="This is director’s account of our Education Center Management System.&#10;You can:&#10;-&#9;Observe the list of students divided by subjects.&#10;-&#9;See and manage the list of teachers.&#10;-&#9;See and manage the list of all students.&#10;-&#9;See the information about the account.&#10;If you have any problems with using this program, please, look further the documentation of the project and find the part “Users’ manual”&#10;" textFill="#f7f0f5" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="stud_edit" layoutX="407.0" layoutY="94.0" prefHeight="340.0" prefWidth="311.0" style="-fx-background-color: #666A86;">
+         <children>
+            <TextField fx:id="editstudent_fname" layoutX="71.0" layoutY="27.0" prefHeight="26.0" prefWidth="182.0" promptText="first name" />
+            <TextField fx:id="editstudent_lname" layoutX="72.0" layoutY="64.0" prefHeight="26.0" prefWidth="182.0" promptText="last name" />
+            <TextField fx:id="editstudent_num" layoutX="70.0" layoutY="102.0" prefHeight="26.0" prefWidth="182.0" promptText="number" />
+            <TextField fx:id="editstudent_group" layoutX="71.0" layoutY="138.0" prefHeight="26.0" prefWidth="182.0" promptText="group" />
+            <TextField fx:id="editstudent_dob" layoutX="72.0" layoutY="177.0" prefHeight="26.0" prefWidth="182.0" promptText="date of birth" />
+            <TextField fx:id="editstudent_login" layoutX="73.0" layoutY="213.0" prefHeight="26.0" prefWidth="182.0" promptText="user name" />
+            <TextField fx:id="editstudent_pass" layoutX="73.0" layoutY="251.0" prefHeight="20.0" prefWidth="182.0" promptText="password" />
+            <Button fx:id="addstudent_main" layoutX="52.0" layoutY="313.0" mnemonicParsing="false" onAction="#Edit_student" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Update" textFill="#f7f0f5" />
+            <Button layoutX="174.0" layoutY="313.0" mnemonicParsing="false" onAction="#closeEditStudent" prefHeight="20.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Close" textFill="#f7f0f5" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="stud_add" layoutX="353.0" layoutY="106.0" prefHeight="338.0" prefWidth="336.0" style="-fx-background-color: #666A86;">
+         <children>
+            <TextField fx:id="addstudent_fname" layoutX="71.0" layoutY="27.0" prefHeight="26.0" prefWidth="182.0" promptText="first name" />
+            <TextField fx:id="addstudent_lname" layoutX="72.0" layoutY="64.0" prefHeight="26.0" prefWidth="182.0" promptText="last name" />
+            <TextField fx:id="addstudent_num" layoutX="70.0" layoutY="102.0" prefHeight="26.0" prefWidth="182.0" promptText="number" />
+            <TextField fx:id="addstudent_group" layoutX="71.0" layoutY="138.0" prefHeight="26.0" prefWidth="182.0" promptText="group" />
+            <TextField fx:id="addstudent_dob" layoutX="72.0" layoutY="177.0" prefHeight="26.0" prefWidth="182.0" promptText="date of birth" />
+            <TextField fx:id="addstudent_login" layoutX="73.0" layoutY="213.0" prefHeight="26.0" prefWidth="182.0" promptText="user name" />
+            <TextField fx:id="addstudent_pass" layoutX="73.0" layoutY="251.0" prefHeight="20.0" prefWidth="182.0" promptText="password" />
+            <Button fx:id="addstudent_main" layoutX="52.0" layoutY="313.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Add" textFill="#f7f0f5" />
+            <Button layoutX="174.0" layoutY="313.0" mnemonicParsing="false" onAction="#closeAddStudent" prefHeight="20.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Close" textFill="#f7f0f5" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="58.0" fitWidth="69.0" layoutX="39.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/book-open-flat.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="111.0" layoutY="5.0" prefHeight="87.0" prefWidth="187.0" text="Educational Center Management System " textFill="#f7f0f5" textOverrun="CLIP" wrapText="true">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="teach_add" layoutX="359.0" layoutY="88.0" prefHeight="358.0" prefWidth="346.0" style="-fx-background-color: #666A86;">
+         <children>
+            <TextField fx:id="addteach_phone" layoutX="83.0" layoutY="284.0" prefHeight="31.0" prefWidth="187.0" promptText="phone" />
+            <TextField fx:id="addteach_fname" layoutX="84.0" layoutY="16.0" prefHeight="31.0" prefWidth="187.0" promptText="first name" />
+            <TextField fx:id="addteach_lname" layoutX="85.0" layoutY="54.0" prefHeight="31.0" prefWidth="187.0" promptText="last name" />
+            <TextField fx:id="addteach_num" layoutX="85.0" layoutY="92.0" prefHeight="31.0" prefWidth="187.0" promptText="number in list" />
+            <TextField fx:id="addteach_dob" layoutX="86.0" layoutY="130.0" prefHeight="31.0" prefWidth="187.0" promptText="date of birth" />
+            <TextField fx:id="addteach_login" layoutX="84.0" layoutY="171.0" prefHeight="31.0" prefWidth="187.0" promptText="login" />
+            <TextField fx:id="addteach_pass" layoutX="85.0" layoutY="208.0" prefHeight="31.0" prefWidth="187.0" promptText="password" />
+            <TextField fx:id="addteach_subject" layoutX="83.0" layoutY="248.0" prefHeight="31.0" prefWidth="187.0" promptText="subject id" />
+            <Button layoutX="68.0" layoutY="318.0" mnemonicParsing="false" onAction="#addTeacher" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #0D0630;" text="Add" textFill="#f7f0f5" />
+            <Button layoutX="190.0" layoutY="318.0" mnemonicParsing="false" onAction="#closeAddTeacher" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #0D0630;" text="Close" textFill="#f7f0f5" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="hide_anch" layoutX="190.0" layoutY="82.0" prefHeight="378.0" prefWidth="686.0" style="-fx-background-color: #0D0630;" />
+      <Label layoutX="657.0" layoutY="39.0" prefHeight="18.0" prefWidth="176.0" text="Hello, director!" textFill="#f2f2f2">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

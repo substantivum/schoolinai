@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="driversql">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../java libraries/driversql" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../java libraries/driversql" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="451.0" prefWidth="853.0" style="-fx-background-color: #0D0630;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StudentController">
+   <children>
+      <ImageView fitHeight="58.0" fitWidth="69.0" layoutX="49.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/book-open-flat.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="121.0" layoutY="15.0" prefHeight="87.0" prefWidth="187.0" text="Educational Center Management System " textFill="#f7f0f5" textOverrun="CLIP" wrapText="true">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="102.0" prefHeight="352.0" prefWidth="853.0" style="-fx-background-color: #0D0630;">
+         <children>
+            <AnchorPane fx:id="manual" layoutX="167.0" prefHeight="372.0" prefWidth="687.0">
+               <children>
+                  <Label layoutX="128.0" layoutY="61.0" prefHeight="250.0" prefWidth="430.0" text="This is student’s account of our Education Center Management System.&#10;You can:&#10;-&#9;See the list of subjects you are having.&#10;-&#9;See the grades of the subjects.&#10;-&#9;See the list of your exams and offsets.&#10;-&#9;See the list of your home tasks.&#10;If you have any problems with using this program, please, look further the documentation of the project and find the part “Users’ manual”&#10;" textFill="#f7f0f5" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="buttons_dir" prefHeight="372.0" prefWidth="201.0" style="-fx-background-color: #0D0630;">
+               <children>
+                  <Button fx:id="subjects_dirbutton1" layoutX="32.0" layoutY="25.0" mnemonicParsing="false" onAction="#showSubjects" opacity="0.88" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="My subjects" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="32.0" layoutY="81.0" mnemonicParsing="false" onAction="#showHomeTasks" opacity="0.88" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #666A86; -fx-border-color: #0D0630;" text="My home tasks" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="32.0" layoutY="134.0" mnemonicParsing="false" onAction="#showGrades" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="My grades" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="32.0" layoutY="186.0" mnemonicParsing="false" onAction="#showExams" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="My exams" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="32.0" layoutY="241.0" mnemonicParsing="false" onAction="#showOffsets" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="My offsets" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="32.0" layoutY="292.0" mnemonicParsing="false" onAction="#showManual" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Information" textFill="#f7f0f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="grades_anch" layoutX="179.0" prefHeight="372.0" prefWidth="675.0">
+               <children>
+                  <TableView fx:id="grades_table" prefHeight="372.0" prefWidth="675.0" stylesheets="@../css/table.css">
+                    <columns>
+                      <TableColumn fx:id="grades_subname" prefWidth="95.20001220703125" text="Subject name" />
+                      <TableColumn fx:id="grades_1c" prefWidth="102.40003967285156" text="1 colloquium" />
+                        <TableColumn fx:id="grades_2c" prefWidth="94.4000244140625" text="2 colloquium" />
+                        <TableColumn fx:id="grades_3c" prefWidth="93.5999755859375" text="3 colloquium" />
+                        <TableColumn fx:id="grades_exam" prefWidth="92.79998779296875" text="exam" />
+                        <TableColumn fx:id="grades_offset" prefWidth="90.4000244140625" text="offset" />
+                        <TableColumn fx:id="grades_fscore" prefWidth="110.4000244140625" text="final_score" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="manual_anch" layoutX="179.0" prefHeight="372.0" prefWidth="675.0" />
+            <AnchorPane fx:id="home_work_anch" layoutX="188.0" prefHeight="334.0" prefWidth="666.0">
+               <children>
+                  <Label fx:id="needthis" layoutX="50.0" layoutY="97.0" prefHeight="18.0" prefWidth="0.0" text="Label" />
+                  <Label fx:id="need2" text="Label" textFill="#0d0630" />
+                  <TableView fx:id="home_work" onMouseClicked="#getSelectedHW" prefHeight="321.0" prefWidth="666.0" stylesheets="@../css/table.css">
+                    <columns>
+                      <TableColumn fx:id="hw_subject" prefWidth="133.6000518798828" text="Subject" />
+                      <TableColumn fx:id="hw_descr" prefWidth="282.4000244140625" text="Description" />
+                        <TableColumn fx:id="hw_deadline" prefWidth="138.39996337890625" text="Deadline" />
+                        <TableColumn fx:id="hw_status" prefWidth="107.2000732421875" text="Status" />
+                    </columns>
+                  </TableView>
+                  <MenuButton fx:id="status_button" layoutY="327.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Change status">
+                    <items>
+                      <MenuItem fx:id="done_status" mnemonicParsing="false" onAction="#changeDone" text="done" />
+                      <MenuItem fx:id="undone_status" mnemonicParsing="false" onAction="#changeUnDone" text="not done" />
+                    </items>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anch_foranch" layoutX="179.0" prefHeight="372.0" prefWidth="675.0">
+               <children>
+                  <TableView fx:id="subjects_table" layoutX="231.0" layoutY="46.0" prefHeight="294.0" prefWidth="187.0" stylesheets="@../css/table.css">
+                    <columns>
+                      <TableColumn fx:id="sub_name" prefWidth="179.20001220703125" text="Subject's name" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="offset_table" layoutX="141.0" layoutY="59.0" prefHeight="259.0" prefWidth="430.0" stylesheets="@../css/table.css">
+                     <columns>
+                        <TableColumn fx:id="offset_sub" prefWidth="179.20001220703125" text="Subject's name" />
+                        <TableColumn fx:id="offset_date" minWidth="9.60003662109375" prefWidth="133.60003662109375" text="Date" />
+                        <TableColumn fx:id="offset_score" prefWidth="116.79998779296875" text="Score" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="exams_table" layoutX="79.0" layoutY="57.0" prefHeight="259.0" prefWidth="521.0" stylesheets="@../css/table.css">
+                     <columns>
+                        <TableColumn fx:id="exams_sub" prefWidth="140.0" text="Subject's name" />
+                        <TableColumn fx:id="exam_consult" prefWidth="128.800048828125" text="Consultation" />
+                        <TableColumn fx:id="exam_date" prefWidth="133.5999755859375" text="Date" />
+                        <TableColumn fx:id="exam_score" prefWidth="103.20001220703125" text="Score" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="hide_anch" layoutX="167.0" layoutY="93.0" prefHeight="381.0" prefWidth="687.0" style="-fx-background-color: #0D0630;" />
+      <Button fx:id="exit" layoutX="706.0" layoutY="50.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="31.0" prefWidth="119.0" style="-fx-border-color: #0D0630; -fx-background-color: #666A86;" text="Exit" textFill="#f7f0f5">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="hello" layoutX="678.0" layoutY="17.0" prefHeight="18.0" prefWidth="176.0" text="Hello, director!" textFill="#f2f2f2">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
